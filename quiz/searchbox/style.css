@@ -1,0 +1,72 @@
+/* Optional: to test background styles on everything
+* {
+    background-color: black;
+}
+*/
+
+body {
+    margin: 0;
+    height: 100vh;                 /* Full screen height */
+    display: flex;                 /* Enable flex layout */
+    justify-content: center;       /* Horizontally center */
+    align-items: center;           /* Vertically center */
+    background-color:white;       /* Background for contrast */
+}
+
+.container {
+    display: flex;                 /* Align items in a row */
+    align-items: center;           /* Vertically center icons and input */
+    background-color: red;
+    border-radius: 50px;
+    padding: 5px;
+    width: 300px;
+    height: 50px;
+    box-shadow: 6px 6px 7px black,
+                6px 6px 7px rgb(164, 66, 66);
+    position: relative;            /* So absolute child positions work */
+}
+
+.input {
+    background-color: transparent; /* So red shows through */
+    border: none;
+    outline: none;                 /* Removes blue outline on focus */
+    color: black;                  /* White text for visibility */
+    flex: 1;                       /* Take up remaining space */
+    margin: 0 40px;                /* Spacing from icons */
+    font-size: 16px;
+}
+
+.search {
+    width: 25px;
+    cursor: pointer;
+    position: absolute;
+    left: 15px;
+    align-items:center;
+}
+
+.mic {
+    width: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+}
+.container.active {
+    width: 50px;
+    transition: width 0.4s ease;
+}
+
+.container.active .input {
+    width: 0;
+    margin: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.container.active .mic {
+    width: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.container.active .search{
+    left:30%;
+}
